@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Bread crumb -->
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-primary">Dashboard</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+<div class="container-fluid">
+    <!-- Start Page Content -->
+    <div class="row">
+
+        <div class="col-md-3">
+            <a href="/Admin/Group">
+                <div class="card p-30">
+                    <div class="media">
+                        <div class="media-left meida media-middle">
+                            <span><i class="fa fa-address-book f-s-40 color-danger"></i></span>
+                        </div>
+                        <div class="media-body media-text-right">
+                            <h2>Group</h2>
+                            <p class="m-b-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/Person">
+                <div class="card p-30">
+                    <div class="media">
+                        <div class="media-left meida media-middle">
+                            <span><i class="fa fa-user-circle-o f-s-40 color-danger"></i></span>
+                        </div>
+                        <div class="media-body media-text-right">
+                            <h2>Person</h2>
+                            <p class="m-b-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/Portal">
+                <div class="card p-30">
+                    <div class="media">
+                        <div class="media-left meida media-middle">
+                            <span><i class="fa fa-comment f-s-40 color-danger"></i></span>
+                        </div>
+                        <div class="media-body media-text-right">
+                            <h2>Portal</h2>
+                            <p class="m-b-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="/Admin/Gateway">
+                <div class="card p-30">
+                    <div class="media">
+                        <div class="media-left meida media-middle">
+                            <span><i class="fa fa-cogs f-s-40 color-danger"></i></span>
+                        </div>
+                        <div class="media-body media-text-right">
+                            <h2>Gateway</h2>
+                            <p class="m-b-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+    <!-- End PAge Content -->
+</div>

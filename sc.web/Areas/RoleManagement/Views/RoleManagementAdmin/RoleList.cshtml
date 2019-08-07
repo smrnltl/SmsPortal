@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Role Management";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Bread crumb -->
+<div class="row page-titles">
+    <div class="col-md-4 align-self-center">
+        <h3 class="text-primary">Role Management</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Admin/RoleManagement">Role Management</a></li>
+            <li class="breadcrumb-item active">Role List</li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+
+
+
+<div class="container-fluid fadeIn" id="data-form">
+    <h4>Role Form</h4>
+    <form id="roleForm">
+        <input type="hidden" id="hdnId" value="0" />
+
+        <table class="table">
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Role Name *</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtRoleName" name="txtRoleName" class="form-control" placeholder="Role Name" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2"></td>
+                <td class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate">Update</button>
+                    <button type="button" class="btn btn-warning" id="btnCancel">Cancel</button>
+                    <button type="button" class="btn btn-default" id="btnReset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+@Html.Partial("_AddButtonPartial")
+
+<div class="container-fluid" id="data-container">
+
+    <h4>Role List</h4>
+    <div id="divData"></div>
+    <div id="divPager" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="~/Areas/RoleManagement/Scripts/RoleManagementAdmin.js"></script>

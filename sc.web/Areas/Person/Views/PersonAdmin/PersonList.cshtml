@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Person";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Bread crumb -->
+<div class="row page-titles">
+    <div class="col-md-4 align-self-center">
+        <h3 class="text-primary">Person</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Admin/Person">Person</a></li>
+            <li class="breadcrumb-item active">Person List</li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+
+<div class="container-fluid" id="search-filter">
+    <!-- Start Page Content -->
+    <h4>Search Filter</h4>
+
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" id="txtNameFilter" name="txtNameFilter" class="form-control" placeholder="Person Name" />
+        </div>
+
+        <div class="col-md-3">
+            <select class="form-control" id="ddlGroupFilter" name="ddlGroupFilter">
+                <option value="0">Select Group</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" id="txtMobileFilter" name="txtMobileFilter" class="form-control" placeholder="Mobile" />
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" id="txtEmailFilter" name="txtEmailFilter" class="form-control" placeholder="Email" />
+        </div>
+
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-control" id="ddlActiveFilter">
+                <option value="2">Status</option>
+                <option value="1">Active</option>
+                <option value="0">InActive</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+            <button type="button" class="btn btn-default" id="btnResetFilter">Reset</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid fadeIn" id="data-form">
+    <h4>Person Form</h4>
+    <form id="personForm">
+        <input type="hidden" id="hdnId" value="0" />
+
+        <table class="table">
+            <tr class="row">
+                <th class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                    <label class="control-label">Group *</label>
+                </th>
+                <td class="col-md-4" id="tdGroups">
+                    <select class="form-control" id="ddlGroup" name="ddlGroup">
+                        <option value="">Select Group</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Person Name *</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtPersonName" name="txtPersonName" class="form-control" placeholder="Person Name" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Mobile *</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtMobile" name="txtMobile" class="form-control" placeholder="Mobile" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Address</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtAddress" name="txtAddress" class="form-control" placeholder="Address" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Email</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtEmail" name="txtEmail" class="form-control" placeholder="Email" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Active</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="checkbox" id="chkIsActive" name="chkIsActive" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2"></td>
+                <td class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+                    <button type="button" class="btn btn-warning" id="btnCancel">Cancel</button>
+                    <button type="button" class="btn btn-default" id="btnReset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="container-fluid fadeIn" id="import-form" style="display:none;">
+    <h4>Person Import Form</h4>
+    <form id="personImportForm">
+        <table class="table">
+            <tr class="row">
+                <th class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                    <label class="control-label">Group *</label>
+                </th>
+                <td class="col-md-4">
+                    <select class="form-control" id="ddlGroupImport" name="ddlGroupImport">
+                        <option value="">Select Group</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Excel File *</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="file" id="fuPersons" name="fuPersons" />
+                    <br />
+                    <a href="~/Areas/Person/Uploads/PersonSample.xlsx" target="_blank">View Sample File</a>
+
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2"></td>
+                <td class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnImport">Import</button>
+                    <button type="button" class="btn btn-warning" id="btnCancelImport">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+@Html.Partial("_AddButtonPartial")
+
+<div class="add-panel">
+    <button type="button" class="bttn-dark bttn-second-button" id="btnImportForm"><i class="fa fa-upload">&nbsp;</i>Import</button>
+</div>
+
+<div class="container-fluid" id="data-container">
+
+    <h4 id="listName">Person List</h4>
+    <div id="divData"></div>
+    <div id="divPager" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="~/Areas/Person/Scripts/PersonAdmin.js"></script>

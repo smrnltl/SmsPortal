@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link id="favicon" type="icon shortcut" media="icon" href="~/Images/favicon.ico" rel="icon" />
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/AdminCss")
+    @Scripts.Render("~/PreloadedJs")
+</head>
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/Admin/Dashboard">
+                        <!-- Logo icon -->
+                        <img src="~/Images/logo.png" alt="Logo" style="height:20px; width:20px;" />
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>Message Portal</span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                    <!-- User profile and search -->
+
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i> <span class="text-white">@HttpContext.Current.User.Identity.Name </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right animated zoomIn">
+                                <ul class="dropdown-user">
+                                    <li><a href="/Account/Profile"><i class="ti-user"></i> Profile</a></li>
+                                    @Html.Partial("_LoginPartial")
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Home</li>
+                        <li>
+                            <a href="/Admin/Dashboard" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">&nbsp;Dashboard</span></a>
+                        </li>
+                        <li class="nav-label">Apps</li>
+                        <li>
+                            <a href="/Admin/Group"><i class="fa fa-address-book"></i><span class="hide-menu">&nbsp;Group</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Person"><i class="fa fa-user-circle-o"></i><span class="hide-menu">&nbsp;Person</span></a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Portal"><i class="fa fa-comment"></i><span class="hide-menu">&nbsp;Portal</span></a>
+                        </li>
+
+                        <li class="nav-label">Settings</li>
+                        <li><a href="/Admin/Gateway"><i class="fa fa-cogs"></i><span class="hide-menu">&nbsp; Message Gateway</span></a></li>
+                        <li><a href="/Admin/Template"><i class="fa fa-book"></i><span class="hide-menu">&nbsp; Message Template</span></a></li>
+                        <li><a href="/Admin/UserManagement"><i class="fa fa-users"></i><span class="hide-menu">&nbsp; User Management</span></a></li>
+                        <li><a href="/Admin/RoleManagement"><i class="fa fa-user"></i><span class="hide-menu">&nbsp; Role Management</span></a></li>
+                        <li><a href="/Admin/SMTP"><i class="fa fa-envelope-o"></i><span class="hide-menu"> SMTP</span></a></li>
+                        <li><a href="javascript:void(0);" id="aAboutMsgPortal"><i class="fa fa-info"></i><span class="hide-menu">&nbsp; About Message Portal</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+
+            <!-- Container fluid  -->
+            @RenderBody()
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer"> © 2019 All rights reserved. Powered by <a href="http://www.itconcerns.com.np" target="_blank">IT Concerns</a></footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+
+    @Html.Partial("_AboutPortalModal")
+
+
+    @Scripts.Render("~/AdminJs")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

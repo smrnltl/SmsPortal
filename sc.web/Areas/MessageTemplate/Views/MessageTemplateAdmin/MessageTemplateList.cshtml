@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Template";
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Bread crumb -->
+<div class="row page-titles">
+    <div class="col-md-4 align-self-center">
+        <h3 class="text-primary">Template</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Admin/Template">Template</a></li>
+            <li class="breadcrumb-item active">Template List</li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+
+<div class="container-fluid" id="search-filter">
+    <h4>Search Filter</h4>
+
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" id="txtNameFilter" name="txtNameFilter" class="form-control" placeholder="Template Name"/>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control" id="ddlActiveFilter">
+                <option value="2">Status</option>
+                <option value="1">Active</option>
+                <option value="0">InActive</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+            <button type="button" class="btn btn-default" id="btnResetFilter">Reset</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid fadeIn" id="data-form">
+    <h4>Template Form</h4>
+    <form id="messageTemplateForm">
+        <input type="hidden" id="hdnId" value="0" />
+
+        <table class="table">
+
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Template Name *</label>
+                </th>
+                <td class="col-md-4">
+                    <input type="text" id="txtTemplateName" name="txtTemplateName" class="form-control" placeholder="Template Name" />
+                </td>
+            </tr>
+            <tr class="row">
+                <th class="col-md-2">
+                    <label class="control-label">Template Message *</label>
+                </th>
+                <td class="col-md-4">
+                    <textarea class="form-control" id="txtDescription" name="txtDescription" placeholder="Template Message" rows="10" cols="5" ></textarea>
+                </td>
+            </tr>
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Active</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="checkbox" id="chkIsActive" name="chkIsActive" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2"></td>
+                <td class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+                    <button type="button" class="btn btn-warning" id="btnCancel">Cancel</button>
+                    <button type="button" class="btn btn-default" id="btnReset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+@Html.Partial("_AddButtonPartial")
+
+<div class="container-fluid" id="data-container">
+    <h4 id="listName">Template List</h4>
+    <div id="divData"></div>
+    <div id="divPager" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="~/Areas/MessageTemplate/Scripts/MessageTemplateAdmin.js"></script>

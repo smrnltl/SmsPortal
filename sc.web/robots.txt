@@ -1,0 +1,5 @@
+﻿User-agent: *
+Disallow: /admin/
+Disallow: /swagger/
+
+Sitemap: http://ajod.sourcecode.com.np/sitemap.xml

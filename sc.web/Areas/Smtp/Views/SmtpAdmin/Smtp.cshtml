@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "SMTP";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Bread crumb -->
+<div class="row page-titles">
+    <div class="col-md-4 align-self-center">
+        <h3 class="text-primary">SMTP</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">Settings</li>
+            <li class="breadcrumb-item active">SMTP</li>
+        </ol>
+    </div>
+</div>
+<!-- End Bread crumb -->
+
+<div class="container-fluid fadeIn" id="data-form">
+    <h4>SMTP Form</h4>
+    <form id="smtpForm">
+        <input type="hidden" id="hdnId" value="0" />
+
+        <table class="table">
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Host Name</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="text" id="txtHostName" name="txtHostName" class="form-control" placeholder="Host Name" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Port No</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="number" id="txtPortNo" name="txtPortNo" class="form-control" placeholder="Port No" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Enable SSL</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="checkbox" id="chkEnableSsl" name="chkEnableSsl" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Use Authentication</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="checkbox" id="chkUseAuth" name="chkUseAuth" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Display Name</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="text" id="txtDisplayName" name="txtDisplayName" class="form-control" placeholder="Display Name" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">From Address</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="email" id="txtFromAddress" name="txtFromAddress" class="form-control" placeholder="From Address" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">Password</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="password" id="txtPassword" name="txtPassword" class="form-control" placeholder="********" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2">
+                    <label class="control-label">To Address</label>
+                </td>
+                <td class="col-md-4">
+                    <input type="email" id="txtToAddress" name="txtToAddress" class="form-control" placeholder="To Address" />
+                </td>
+            </tr>
+
+            <tr class="row">
+                <td class="col-md-2"></td>
+                <td class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+                    <button type="button" class="btn btn-warning" id="btnCancel">Cancel</button>
+                    <button type="button" class="btn btn-default" id="btnReset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+@Html.Partial("_AddButtonPartial")
+
+<div class="container-fluid" id="data-container">
+    <h4>SMTP List</h4>
+    <div id="divData"></div>
+    <div id="divPager" style="display: none"></div>
+</div>
+
+<script type="text/javascript" src="~/Areas/Smtp/Scripts/SmtpAdmin.js"></script>
+

@@ -1,0 +1,104 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*** ADMIN LOGIN ***/
+#adminlogin {
+    text-align: center;
+    background: #555;
+    margin-top: 10%;
+}
+
+    #adminlogin .form-signin {
+        background: #f1f1f1;
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+        #adminlogin .form-signin .checkbox {
+            font-weight: 400;
+            text-align: left;
+        }
+
+        #adminlogin .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            #adminlogin .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        #adminlogin .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        #adminlogin .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        #adminlogin .form-signin .btn-primary {
+            background: #005C99;
+            border: none;
+            /*width: auto;*/
+            font-size: 16px;
+        }
+
+/* edit css*/
+
+
+
+.img-wrap {
+    width: 100%;
+    float: left;
+    /*display: block;
+    border-radius: 5px;
+    background: #444444;
+    margin-bottom: 30px;*/
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#adminlogin .form-signin img.mb-3 {
+    padding: 20px;
+}
+
+form.form-horizontal {
+    padding: 20px;
+}
+
+.validation-summary-errors.text-danger ul {
+    /*padding: 0px;*/
+}
+
+.validation-summary-errors.text-danger li {
+    list-style: none;
+    text-align: left;
+}
+
+.forgot-msg {
+    padding-bottom: 10px;
+}
